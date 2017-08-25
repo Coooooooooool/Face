@@ -133,10 +133,13 @@ public class MainActivity extends AppCompatActivity implements OnFaceDetectorLis
 //        PermissionsManager.startAppSettings(getApplicationContext());
 //    }
 
+
+
+
+
     @Override
     public void onFace(Mat mat, Rect rect) {
 
-        Log.e(TAG,"onFaceonFaceonFace");
 
         if (isGettingFace) {
             if (null == mBitmapFace1 || null != mBitmapFace2) {
@@ -157,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnFaceDetectorLis
                 cmp = FaceUtil.compare(this, FACE1, FACE2);
                 Log.i(TAG, "onFace: 相似度 : " + cmp);
             }
+
 
             runOnUiThread(new Runnable() {
                 @Override
